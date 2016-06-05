@@ -8,9 +8,9 @@
             return {
                 btn:false,
                 gall:[
-                    "../dist/img/1.jpg",
-                    "../dist/img/2.jpg",
-                    "../dist/img/3.jpg"
+                    "./dist/img/1.jpg",
+                    "./dist/img/2.jpg",
+                    "./dist/img/3.jpg"
                 ]
             }
         },
