@@ -1,14 +1,17 @@
 <template>
-    <div class="home">
-        <h1>&lt;html&gt;</h1>
-        <button @click="btns">确认</button>
-    </div>
+    <gallery :data="gall"></gallery>
 </template>
 <script>
+    import gallery from "../view/gallery";
     export default {
         data(){
             return {
-                btn:false
+                btn:false,
+                gall:[
+                    "../dist/img/1.jpg",
+                    "../dist/img/2.jpg",
+                    "../dist/img/3.jpg"
+                ]
             }
         },
         methods: {
@@ -16,21 +19,10 @@
                 this.btn = true;
             }
         },
+        components: {
+            gallery: gallery
+        }
     }
 </script>
 <style lang="less">
-    @bg:"../../dist/img/bg.jpg";
-    .home {
-        transition: 0.3s all;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background: url(@bg) no-repeat bottom;
-        background-size: cover;
-        h1 {
-            font-size:3em;
-        }
-    }
-
 </style>

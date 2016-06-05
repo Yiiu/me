@@ -1,6 +1,5 @@
 <template>
     <header class="nav">
-        <div class="bg"></div>
         <div class="content">
             <ul>
                 <li>
@@ -20,8 +19,8 @@
     header.nav {
             background:
             linear-gradient(
+                rgba(0,0,0,0.7),
                 rgba(0,0,0,0.4),
-                rgba(0,0,0,0.2),
                 rgba(0,0,0,0.1),
                 rgba(0,0,0,0)
             );
@@ -64,4 +63,20 @@
             }
         }
     }
-</style>
+    @media screen and(max-width:1024px){
+        header.nav .content {
+            width: 768px;
+        }
+    }
+    @media screen and(max-width:768px){
+        header.nav .content {
+            width: auto;
+        }
+        header.nav .content ul {
+            float:none;
+            width: 210px;
+            height:75px;
+            margin: 0 auto;
+        }
+    }
+    </style>
