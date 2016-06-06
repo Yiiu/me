@@ -1,5 +1,5 @@
 <template>
-    <div class="gallery">
+    <div class="gallery" v-el:box>
         <div class="box">
             <div  v-el:cont class="content" 
                 v-bind:class="{'move':down}"
@@ -115,8 +115,10 @@
             // 获取浏览器的长宽
             _window:function(){
                 let img = this.$els.cont.getElementsByClassName("img");
-                let width = document.documentElement.clientWidth;
+                let width = document.body.offsetWidth;
                 let height = document.documentElement.clientHeight;
+                let widths = this.$els.box.style.width;
+                console.log(this.$els.box.offsetWidth)
                 this.$els.cont.style.width = width*img.length+ "px";
                 for(var i =0 ;i<img.length;i++){
                     img[i].style.width = width +"px";
@@ -140,15 +142,16 @@
 </script>
 <style lang="less">
     .gallery{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        overflow: hidden;
         .move{
             cursor:move;
             transition: 
                 all 0s ;
         }
         .box {
-            position: absolute;
-            width: 100%;
-            height: 100%;
             overflow: hidden;
             .content {
                 position: absolute;

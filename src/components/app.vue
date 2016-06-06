@@ -19,7 +19,7 @@
         margin: 0;
     }
     body {
-        height: 100%;
         font-size:1em;
+        background: #ececec;
     }
 </style>
