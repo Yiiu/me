@@ -1,5 +1,5 @@
 <template>
-    <div class="gallerys" transition="expand">
+    <div class="gallerys" transition="gallerys">
         <gallery :data="gall"></gallery>
     </div>
 </template>
@@ -10,9 +10,9 @@
             return {
                 btn:false,
                 gall:[
-                    "http://yu7er.qiniudn.com/3.jpg",
-                    "http://yu7er.qiniudn.com/2.jpg",
-                    "http://yu7er.qiniudn.com/1.jpg"
+                    "./dist/img/1.jpg",
+                    "./dist/img/2.jpg",
+                    "./dist/img/3.jpg"
                 ]
             }
         },
@@ -34,5 +34,12 @@
     width: 100%;
     height:100%;
     overflow: hidden;
+}
+.gallerys-transition {
+  transition: all .3s ease;
+}
+.gallerys-enter, .gallerys-leave {
+    height: 0;
+    opacity: 0;
 }
 </style>

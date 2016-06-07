@@ -18,7 +18,7 @@
     </header>
 </template>
 <style lang="less">
-    @color: #38B8F2;
+    @color: #00a192;
     header.nav {
         transition: 
             border .5s cubic-bezier(0.46, 0.03, 0.52, 0.96), 
@@ -56,8 +56,8 @@
     header.or {
         background: #fff;
         .content ul li a:hover {
-            color: #38B8F2;
-            border-bottom: 5px solid #38B8F2;
+            color: @color;
+            border-bottom: 5px solid @color;
         }
         .content ul li a {
             color: #757575;
@@ -67,7 +67,7 @@
     header.index {
         width: 100%;
         height: 80px;
-        position: fixed;
+        position: relative;
         top:0;
         left:0;
         background:
