@@ -1,5 +1,6 @@
 import Home from "./components/home";
 import Show from "./components/show";
+import Test from "./view/test";
 module.exports = (router,app) => {
     router.map({
         "/": {
@@ -8,8 +9,8 @@ module.exports = (router,app) => {
         },
         "/show": {
             name: "Show",
-            component: Show
-        }
+            component: Show,
+        },
     })
     router.redirect({
         "*" : "/404"

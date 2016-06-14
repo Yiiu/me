@@ -1,25 +1,70 @@
 <template>
-    <div class="show" transition="show">
+    <div class="show" transition="show" id="show">
         <div class="content">
             <div class="left">
                 <div class="content">
                     <div class="label">
-                        <a href="">全部</a>
+                        <span>全部</span>
                     </div>
                     <div class="label">
-                        <a href="">Javascript</a>
+                        <span>Javascript</span>
                     </div>
                     <div class="label">
-                        <a href="">Css</a>
+                        <span>Css</span>
                     </div>
                 </div>
             </div>
             <div class="right">
-                <div class="content">2</div>
+                <shows :test="datas"></shows>
             </div>
         </div>
     </div>
 </template>
+<script>
+    import shows from "../view/shows"
+    export default {
+        data(){
+            return {
+                classify: "all",
+                datas:[
+                    {
+                        "title":"ss",
+                        "bg":"test",
+                        "label":[12],
+                        "content":"asdasd"
+                    },
+                    {
+                        "title":"sss",
+                        "bg":"test",
+                        "label":[11],
+                        "content":"asdasd"
+                    },
+                    {
+                        "title":"sss",
+                        "bg":"test",
+                        "label":[11],
+                        "content":"asdasd"
+                    },
+                    {
+                        "title":"sss",
+                        "bg":"test",
+                        "label":[11],
+                        "content":"asdasd"
+                    },
+                    {
+                        "title":"sss",
+                        "bg":"test",
+                        "label":[11],
+                        "content":"asdasd"
+                    }
+                ]
+            }
+        },
+        components :{
+            shows
+        }
+    }
+</script>
 <style lang="less">
     @fontColor: #757575;
     .show {
@@ -45,7 +90,7 @@
                 margin-left: 30px;
                 >.label{
                     font-size: 1.5rem;
-                    a {
+                    span {
                         display: inline-block;
                         padding: 5px 0;
                         width: 100%;
@@ -53,8 +98,9 @@
                         color: @fontColor;
                         text-decoration: none;
                         transition: 0.3s border;
+                        cursor: pointer;
                     }
-                    a:hover{
+                    span:hover{
                         border-right: 2px solid #00a192;
                     }
                 }

@@ -91,7 +91,7 @@
             // 计算cont的位置
             trans:function(){
                 let width = document.documentElement.clientWidth;
-                var w = document.documentElement.clientWidth;
+                let w = document.documentElement.clientWidth;
                 let x = this.x-this.windowX;
                 if(x>=0){
                     if(x>width/2&&this.i!=this.data.length-1){
@@ -114,17 +114,24 @@
             },
             // 获取浏览器的长宽
             _window:function(){
-                let img = this.$els.cont.getElementsByClassName("img");
-                let width = document.body.offsetWidth;
-                let height = document.documentElement.clientHeight;
-                let widths = this.$els.box.style.width;
-                console.log(this.$els.box.offsetWidth)
-                this.$els.cont.style.width = width*img.length+ "px";
-                for(var i =0 ;i<img.length;i++){
-                    img[i].style.width = width +"px";
-                    img[i].style.height = height +"px";
+                if(!document.getElementsByClassName("gallery")[0]){
+                    return
+                }else {
+                    let that = this;
+                    let img = this.$els.cont.getElementsByClassName("img");
+                    let width = document.body.offsetWidth;
+                    let height = document.documentElement.clientHeight;
+                    let widths = this.$els.box.style.width;
+                    this.$els.cont.style.width = width*img.length+ "px";
+                    for(var i =0 ;i<img.length;i++){
+                        img[i].style.width = width +"px";
+                        img[i].style.height = height +"px";
+                    }
+                    window.onresize=function(){
+                        that._window()
+                    }
+                    this.do()
                 }
-                this.do()
             },
             btn:function(index){
                 this.i = index;
@@ -132,11 +139,7 @@
             }
         },
         ready:function(){
-            var that = this;
-            that._window()
-            window.onresize=function(){  
-                 that._window()
-            }  
+            this._window()
         }
     }
 </script>
